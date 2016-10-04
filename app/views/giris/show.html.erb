@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ilk basvuru tarihi:</strong>
+  <%= @giri.ilk_basvuru_tarihi %>
+</p>
+
+<p>
+  <strong>Gonullu:</strong>
+  <%= @giri.gonullu %>
+</p>
+
+<p>
+  <strong>Basvuran:</strong>
+  <%= @giri.basvuran %>
+</p>
+
+<p>
+  <strong>Morcati destegi aliyor:</strong>
+  <%= @giri.morcati_destegi_aliyor %>
+</p>
+
+<p>
+  <strong>Iletisime gecen:</strong>
+  <%= @giri.iletisime_gecen %>
+</p>
+
+<p>
+  <strong>Iletisime gecme yolu:</strong>
+  <%= @giri.iletisime_gecme_yolu %>
+</p>
+
+<p>
+  <strong>Notlar:</strong>
+  <%= @giri.notlar %>
+</p>
+
+<%= link_to 'Edit', edit_giri_path(@giri) %> |
+<%= link_to 'Back', giris_path %>

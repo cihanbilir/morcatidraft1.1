@@ -1,0 +1,1 @@
+json.array! @giris, partial: 'giris/giri', as: :giri

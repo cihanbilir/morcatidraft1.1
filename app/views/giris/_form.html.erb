@@ -1,0 +1,17 @@
+<%= simple_form_for(@giri) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :ilk_basvuru_tarihi %>
+    <%= f.association :gonullu %>
+    <%= f.association :basvuran %>
+    <%= f.input :morcati_destegi_aliyor %>
+    <%= f.input :iletisime_gecen %>
+    <%= f.input :iletisime_gecme_yolu %>
+    <%= f.input :notlar %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
