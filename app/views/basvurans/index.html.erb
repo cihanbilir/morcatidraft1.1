@@ -1,37 +1,44 @@
-<h1>Listing basvurans</h1>
-
-<table>
+<%- model_class = Basvuran -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Basvuran %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Isim</th>
-      <th>Soyisim</th>
-      <th>Basvuran kod</th>
-      <th>Telefon</th>
-      <th>Mail</th>
-      <th>Gonullu</th>
-      <th>User</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:isim) %></th>
+      <th><%= model_class.human_attribute_name(:soyisim) %></th>
+      <th><%= model_class.human_attribute_name(:basvuran_kod) %></th>
+      <th><%= model_class.human_attribute_name(:telefon) %></th>
+      <th><%= model_class.human_attribute_name(:mail) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @basvurans.each do |basvuran| %>
       <tr>
+        <td><%= basvuran.id %></td>
         <td><%= basvuran.isim %></td>
         <td><%= basvuran.soyisim %></td>
         <td><%= basvuran.basvuran_kod %></td>
         <td><%= basvuran.telefon %></td>
         <td><%= basvuran.mail %></td>
-        <td><%= basvuran.gonullu %></td>
-        <td><%= basvuran.user %></td>
-        <td><%= link_to 'Show', basvuran %></td>
-        <td><%= link_to 'Edit', edit_basvuran_path(basvuran) %></td>
-        <td><%= link_to 'Destroy', basvuran, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l basvuran.created_at, format: :long %></td>
+        <td>
+          <%= link_to basvuran_path(basvuran), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to basvuran_path(basvuran), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Basvuran', new_basvuran_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_basvuran_path,
+            :class => 'btn btn-primary' %>

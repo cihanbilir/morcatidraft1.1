@@ -1,39 +1,32 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Basvuran -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Basvuran %></h1>
+</div>
 
-<p>
-  <strong>Isim:</strong>
-  <%= @basvuran.isim %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:isim) %></dt>
+      <dd><pre class="prettyprint"><%= @basvuran.isim %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:soyisim) %></dt>
+      <dd><pre class="prettyprint"><%= @basvuran.soyisim %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:basvuran_kod) %></dt>
+      <dd><pre class="prettyprint"><%= @basvuran.basvuran_kod %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:telefon) %></dt>
+      <dd><pre class="prettyprint"><%= @basvuran.telefon %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:mail) %></dt>
+      <dd><pre class="prettyprint"><%= @basvuran.mail %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Soyisim:</strong>
-  <%= @basvuran.soyisim %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              basvurans_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_basvuran_path(@basvuran), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              basvuran_path(@basvuran),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Basvuran kod:</strong>
-  <%= @basvuran.basvuran_kod %>
-</p>
-
-<p>
-  <strong>Telefon:</strong>
-  <%= @basvuran.telefon %>
-</p>
-
-<p>
-  <strong>Mail:</strong>
-  <%= @basvuran.mail %>
-</p>
-
-<p>
-  <strong>Gonullu:</strong>
-  <%= @basvuran.gonullu %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @basvuran.user %>
-</p>
-
-<%= link_to 'Edit', edit_basvuran_path(@basvuran) %> |
-<%= link_to 'Back', basvurans_path %>
