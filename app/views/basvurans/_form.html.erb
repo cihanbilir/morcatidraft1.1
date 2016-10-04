@@ -1,0 +1,17 @@
+<%= simple_form_for(@basvuran) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :isim %>
+    <%= f.input :soyisim %>
+    <%= f.input :basvuran_kod %>
+    <%= f.input :telefon %>
+    <%= f.input :mail %>
+    <%= f.association :gonullu %>
+    <%= f.association :user %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

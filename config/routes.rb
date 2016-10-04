@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :basvurans
+
   resources :giris
 
   devise_for :admin_users, ActiveAdmin::Devise.config
